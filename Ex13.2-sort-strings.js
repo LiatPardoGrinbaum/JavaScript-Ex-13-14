@@ -6,19 +6,33 @@ const sortToAsc = foods.slice().sort();
 console.log(sortToAsc);
 
 //a.2
-const sortToDes = foods.slice().sort().reverse();
+const sortToDes = foods.slice().sort((a, b) => (a > b ? -1 : 1));
 console.log(sortToDes);
 
 //***b***
 const foodsWithUpperCase = ["falafel", "Sabich", "hummus", "pizza with extra pineapple"];
 
 //b.1
-const sortToAsc2 = foodsWithUpperCase.slice().sort();
+console.log("hii");
+const sortToAsc2 = foodsWithUpperCase.slice().sort((a, b) => {
+  if (a.toUpperCase() < b.toUpperCase()) {
+    return -1;
+  } else {
+    return 1;
+  }
+});
+
 console.log(sortToAsc2);
 
 //b.2
-const sortToDes2 = foodsWithUpperCase.slice().sort((a, b) => (a > b ? -1 : 1)); ///can be done with .reverse() too
-console.log("hii");
+const sortToDes2 = foodsWithUpperCase.slice().sort((a, b) => {
+  if (b.toUpperCase() < a.toUpperCase()) {
+    return -1;
+  } else {
+    return 1;
+  }
+});
+
 console.log(sortToDes2);
 
 //***c***
